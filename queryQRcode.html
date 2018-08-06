@@ -1,66 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	<meta name="format-detection" content="telephone=no">
-    <title>Document</title>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>商户优惠信息列表</title>
     <link rel="stylesheet" href="css/queryQRcode.css">
-    <link rel="stylesheet"  href="css/mobileSelect.css">
-    
-    
+    <script src="js/jquery.js"></script>
 </head>
-<body> 
-  <div class="wrapper">
-      <!-- 查询区 -->
-      <div class="contain">
-        <div class="fixWidth">
-           
-            <div class="demo">
-                <div class="searchBox"> <img src="images/search.png" alt="搜索">
-                     <span id="trigger1">优惠类型</span> </div>
-                <!-- <div id="trigger2">双项选择</div>
-                <div id="trigger3">多项选择</div>
-                <div id="trigger4">地区选择-级联</div>
-                <div id="trigger5">车型选择-级联</div> -->
-            </div>
-        </div>
-    
+
+<body>
+    <div class="wrapper">
+        <ul>
+            <p>
+                <img src="images/tb1.png" alt="">
+                <span>免时长</span>
+                <span>查看全部 （
+                    <span class="value"> 6</span>
+                    ）
+                </span>
+            </p>
+            <li class="id1">免时长720分钟</li>
+            <li class="id2">免时长720分钟</li>
+        </ul>
+        <ul>
+                <p>
+                    <img src="images/tb1.png" alt="">
+                    <span>免时长</span>
+                    <span>查看全部 （
+                        <span class="value"> 6</span>
+                        ）
+                    </span>
+                </p>
+                <li class="id3">免时长720分钟</li>
+                <li class="id4">免时长720分钟</li>
+            </ul>
     </div>
-      <div class="showData">
-          
-      </div>
-
-  </div>
-  <script src="js/jquery-3.2.1.min.js"></script>
-  <script src="js/queryQRcode.js"></script>
-  <script src="js/mobileSelect.js" type="text/javascript"></script>
- 
-  <script>
-
-var weekdayArr=[ '免单','免时间','免金额','免金额'];
-var mobileSelect1 = new MobileSelect({
-    trigger: '#trigger1',
-    title: '优惠类型',
-    wheels: [
-                {data: weekdayArr}
-            ],
-    position:[2], //初始化定位 打开时默认选中的哪个 如果不填默认为0
-    transitionEnd:function(indexArr, data){
-        //console.log(data);
-    },
-    callback:function(indexArr, data){
-        //下拉框值改变发送请求
-        console.log(data);
-    }
-});
- $('.searchBox').on("click",function(){
-     document.getElementById('trigger1').click();
-    // $('#trigger1').click();
-})
-</script>
+    <script>
+        $('ul').on('touchstart','li',function(){
+            console.log($(this)[0].className);
+            window.location.href='login.html';
+        }) 
+    </script>
 </body>
+
 </html>

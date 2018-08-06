@@ -21,10 +21,10 @@ $('.button').on('touchstart', function () {
         success: function (dataObj) {
             console.log("成功");
         },
-        // error: function (error) {
-        //     var e = error;
-        //     console.log(error);
-        //     // window.location.href = "https://www.baidu.com/"
-        // }
+        error: function (error) {
+            var e = error;
+            console.log(error);
+             window.location.href = "queryQRcode.html";
+        }
     });
 });
